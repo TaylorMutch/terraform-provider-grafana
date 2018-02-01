@@ -5,7 +5,7 @@ import (
 	"log"
 	"strconv"
 
-	gapi "github.com/apparentlymart/go-grafana-api"
+	gapi "github.com/TaylorMutch/go-grafana-cloudera-api"
 	"github.com/hashicorp/terraform/helper/schema"
 )
 

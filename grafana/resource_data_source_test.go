@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"testing"
 
-	gapi "github.com/apparentlymart/go-grafana-api"
+	gapi "github.com/TaylorMutch/go-grafana-cloudera-api"
 
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/terraform"
@@ -97,8 +97,10 @@ resource "grafana_data_source" "test_cloudwatch" {
     name = "terraform-acc-test-cloudwatch"
     url = "http://terraform-acc-test.invalid/"
     json_data {
-			default_region = "us-east-1"
-			auth_type      = "keys"
+			# default_region = "us-east-1"
+			# auth_type      = "keys"
+			cm_api_version = "v11+"
+			tls_skip_verify = "true"
 		}
     secure_json_data {
 			access_key = "123"

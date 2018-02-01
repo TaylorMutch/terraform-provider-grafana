@@ -7,7 +7,7 @@ import (
 
 	"github.com/hashicorp/terraform/helper/schema"
 
-	gapi "github.com/apparentlymart/go-grafana-api"
+	gapi "github.com/TaylorMutch/go-grafana-cloudera-api"
 )
 
 func ResourceDataSource() *schema.Resource {
@@ -232,8 +232,10 @@ func makeDataSource(d *schema.ResourceData) (*gapi.DataSource, error) {
 
 func makeJSONData(d *schema.ResourceData) gapi.JSONData {
 	return gapi.JSONData{
-		AuthType:      d.Get("json_data.0.auth_type").(string),
-		DefaultRegion: d.Get("json_data.0.default_region").(string),
+		//AuthType:      d.Get("json_data.0.auth_type").(string),
+		//DefaultRegion: d.Get("json_data.0.default_region").(string),
+		CMApiVersion:  d.Get("json_data.0.cm_api_version").(string),
+		TLSSkipVerify: d.Get("json_data.0.tls_skip_verify").(string),
 	}
 }
 
